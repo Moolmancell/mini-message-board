@@ -7,6 +7,11 @@
     <title>Mini Messaage Board</title>
 </head>
 <body>
-    <h1>Hi</h1>
+    <h1><%= title %></h1>
+    <ul>
+        <% messages.forEach(message => { %>
+            <%- include('messageContainer', { author: message.author, content: message.text, date: message.added }) %>
+        <% }) %>
+    </ul>
 </body>
 </html>
