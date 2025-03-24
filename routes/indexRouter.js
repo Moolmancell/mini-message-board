@@ -14,8 +14,12 @@ const messages = [
   }
 ];
 
+function updateMessages(message, author) {
+  messages.push({text: message, user: author, added: new Date()});
+}
+
 indexRouter.get('/', (req, res) => {
   res.render('index', {title: "Mini Messageboard", messages: messages});
 });
 
-module.exports = indexRouter;
+module.exports = {indexRouter, updateMessages};
