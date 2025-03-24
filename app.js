@@ -11,8 +11,9 @@ app.use(express.static(assetsPath));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use('/', indexRouter.indexRouter);
 app.use('/new', newRouter);
+app.use('/', indexRouter.indexRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
